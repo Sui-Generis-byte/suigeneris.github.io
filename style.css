@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, sans-serif;
+}
+
+body {
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* Scroll sections */
+.scroll-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #222;
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  transition: all 1s ease;
+}
+
+/* Subtle background images for each section */
+#hero { background: url('images/abacha1.jpg') center/cover no-repeat; opacity: 0.95; }
+#history { background: url('images/abacha2.jpg') center/cover no-repeat; opacity: 0.95; }
+#effort { background: url('images/abacha3.jpg') center/cover no-repeat; opacity: 0.95; }
+#ingredients { background: url('images/abacha4.jpg') center/cover no-repeat; opacity: 0.95; }
+#gallery { background: url('images/abacha5.jpg') center/cover no-repeat; opacity: 0.95; }
+#order { background: url('images/abacha6.jpg') center/cover no-repeat; opacity: 0.95; }
+
+/* Text styling */
+.scroll-section h1, .scroll-section h2, .scroll-section p, .scroll-section ul, .scroll-section li {
+  color: #222;
+}
+
+.scroll-section h1 { font-size: 3rem; margin-bottom: 20px; color: #556B2F; }
+.scroll-section h2 { font-size: 2.5rem; margin-bottom: 15px; color: #8B4513; }
+.scroll-section p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px; }
+.scroll-section ul { list-style: disc inside; font-size: 1.1rem; margin-top: 10px; }
+.scroll-section li { margin-bottom: 10px; }
+
+/* Gallery styling */
+.gallery-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.gallery-row img {
+  height: 300px;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.gallery-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Order button */
+.order-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #228B22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background-color: #556B2F;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Slow horizontal scroll effect for gallery */
+.gallery-row {
+  animation: scroll-slow 60s linear infinite alternate;
+}
+
+@keyframes scroll-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-5%); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .scroll-section h1 { font-size: 2rem; }
+  .scroll-section h2 { font-size: 2rem; }
+  .gallery-row img { height: 200px; }
+}
